@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     getRecipe();
-  }, []);
+  }, [query]);
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -36,10 +36,10 @@ function App() {
 
   return (
     <div className="App">
-        <form >
-          <input type="text"/>
-          <button>search</button>
-        </form>
+       <form onSubmit={updateQuery}>
+        <input type='text' value={search} onChange={updateSearch} />
+        <button type='submt'>Search</button>
+      </form>
         {recipes.map( (recipe)=>(
           <Recipe
                 key={recipe.recipe.label}
