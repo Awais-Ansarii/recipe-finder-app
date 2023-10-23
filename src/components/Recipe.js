@@ -59,8 +59,8 @@ const Recipe = ({ title, calories, image, ingredients }) => {
         </CardActions>
         <Collapse in={expanded} timeout='auto' unmountOnExit>
           <CardContent>
-            {ingredients.map((ingredient) => (
-              <Typography paragraph>{ingredient.text}</Typography>
+            {ingredients.map((ingredient, index) => (
+              <Typography key={index} paragraph>{ingredient.text}</Typography>
             ))}
           </CardContent>
         </Collapse>

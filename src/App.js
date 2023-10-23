@@ -77,10 +77,10 @@ function App() {
       </form> */}
       <div style={{ margin: "10px" }}>
         <Grid container>
-          {recipes.map((recipe) => (
+          {recipes.map((recipe, index) => (
             <Grid item xs={3}>
               <Recipe
-                key={recipe.recipe.label}
+                key={index}
                 title={recipe.recipe.label}
                 calories={recipe.recipe.calories}
                 image={recipe.recipe.image}
