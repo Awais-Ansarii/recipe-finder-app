@@ -15,7 +15,7 @@ function App() {
       `https://api.edamam.com/search?q=${query}&app_id=${App_Id}&app_key=${App_Key}`
     );
     setRecipes(response.data.hits);
-    console.log(response.data.hits); 
+    // console.log(response.data.hits); 
   };
 
   
@@ -40,9 +40,9 @@ function App() {
         <input type='text' value={search} onChange={updateSearch} />
         <button type='submt'>Search</button>
       </form>
-        {recipes.map( (recipe)=>(
+        {recipes.map( (recipe, index)=>(
           <Recipe
-                key={recipe.recipe.label}
+                key={index}
                 title={recipe.recipe.label}
                 calories={recipe.recipe.calories}
                 image={recipe.recipe.image}
